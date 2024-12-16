@@ -124,12 +124,6 @@ def register_colormaps():
         }
     }
 
-    if MATPLOTLIB_IS_INSTALLED:
-        for name, colormap in colormaps.items():
-            if name not in matplotlib.colormaps:
-                cm.register_cmap(cmap=LinearSegmentedColormap(name, colormap, 256))
-
-
 def initial_bearing(lon1, lat1, lon2, lat2):
         """Initial bearing when traversing from point1 (lon1, lat1)
         to point2 (lon2, lat2)
