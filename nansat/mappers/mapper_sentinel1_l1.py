@@ -54,7 +54,7 @@ class Mapper(VRT):
     Creates self.dataset and populates it with S1 bands (when fast=False).
     """
     def __init__(self, filename, gdalDataset, gdalMetadata, fast=False, fixgcp=True, **kwargs):
-        if not os.path.split(filename.rstrip('/'))[1][:3] in ['S1A', 'S1B']:
+        if not os.path.split(filename.rstrip('/'))[1][:3] in ['S1A', 'S1B', 'S1C']:
             raise WrongMapperError('%s: Not Sentinel 1A or 1B' %filename)
 
         if not IMPORT_SCIPY:
